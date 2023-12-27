@@ -35,6 +35,7 @@ a70   ok
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>         //https://github.com/tzapu/WiFiManager
+#include <ESP8266mDNS.h>
 
 #include <FS.h>
 #include <LittleFS.h>
@@ -136,8 +137,14 @@ void setup() {
         delay(500);
         Serial.print(".");
     }
-    WiFi.hostname("IR-Server");
+    WiFi.hostname("remote.local");
     Serial.println("WiFi connected");
+
+    // Start the mDNS responder for remote.local
+    if (!MDNS.begin("remote")) {
+        Serial.println("Error setting up MDNS responder!");
+    }
+    Serial.println("mDNS responder started");
 
     // Print the IP address
     Serial.println(WiFi.localIP());
@@ -150,6 +157,9 @@ void setup() {
     server.begin();
     Serial.println("Web Server started");
 
+    // Add service to MDNS-SD
+    MDNS.addService("http", "tcp", 80);
+
     irsend.begin();
     irrecv.enableIRIn();
     while (!Serial)  // Wait for the serial connection to be established.
@@ -158,6 +168,7 @@ void setup() {
 }
 
 void loop() {
+    MDNS.update();
     server.handleClient();
 }
 
