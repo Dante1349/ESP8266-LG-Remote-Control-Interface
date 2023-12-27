@@ -1,0 +1,151 @@
+/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/purple-green.css";
+
+$buttonPadding: 5px;
+
+.content {
+  height: 100%;
+  display: flex;
+  background-color: #000000;
+}
+
+.body {
+  background-color: #000000;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.remote-body {
+  background-color: #222222;
+  max-width: 240px;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+// top buttons
+
+.top-button-row {
+  display: flex;
+  justify-content: space-between;
+  margin: {
+    top: 7px;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+  }
+}
+.top-button {
+  padding: $buttonPadding;
+}
+
+//option buttons
+
+.option-button-row {
+  display: flex;
+  justify-content: center;
+  margin: {
+    top: 10px;
+    bottom: 10px;
+    right: auto;
+    left: auto;
+  }
+}
+.option-button {
+  padding: $buttonPadding;
+}
+
+// vol and channel buttons
+
+.ch-vol-button-row {
+  display: flex;
+  justify-content: center;
+}
+.ch-vol-button {
+  padding: {
+    top: 10px;
+    bottom: 10px;
+    left: 32px;
+    right: 32px;
+  }
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+//misc
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  padding: $buttonPadding;
+  width: 64px;
+}
+
+// directions
+
+.directions {
+  text-align: center;
+  background-color: darkslategrey;
+  max-width: 218px;
+  margin: {
+    top: 10px;
+    bottom: 10px;
+    right: auto;
+    left: auto;
+  }
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.dir-button {
+  width: 64px;
+}
+
+.di-but{
+  padding: 5px;
+}
+
+.dir-1 {
+  display: flex;
+  justify-content: center;
+}
+
+.dir-2 {
+  display: flex;
+  justify-content: center;
+}
+
+.dir-3 {
+  display: flex;
+  justify-content: center;
+}
+
+.up {
+}
+
+.down {
+}
+
+.left {
+}
+
+.right {
+}
+
+.return {
+}
+
+.ok {
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

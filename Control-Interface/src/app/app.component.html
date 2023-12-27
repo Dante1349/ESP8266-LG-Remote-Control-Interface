@@ -1,0 +1,113 @@
+<div class="content">
+  <div class="remote-body">
+    <div class="top-button-row">
+      <div class="top-button">
+        <button mat-raised-button color="accent" (click)="mainButton('source')">source</button>
+      </div>
+      <div class="top-button">
+        <button mat-raised-button color="warn" (click)="mainButton('onoff')">on/off</button>
+      </div>
+    </div>
+
+    <div class="option-button-row">
+      <div class="option-button">
+        <button mat-raised-button color="primary" (click)="homeButton()">
+          <i class="material-icons">home</i>
+        </button>
+      </div>
+      <!-- <div class="option-button">
+        <button mat-raised-button color="primary" (click)="steamLink()">steam</button>
+      </div> -->
+      <div class="option-button">
+        <button mat-raised-button color="primary" (click)="infoButton()">
+          <i class="material-icons">info</i>
+        </button>
+      </div>
+    </div>
+
+    <div class="directions">
+      <div class="dir-1">
+        <div class="di-but">
+          <div class="dir-button">
+          </div>
+        </div>
+        <div class="di-but">
+          <button class="dir-button" mat-raised-button color="secondary" (click)="arrowButton('up')">
+            <i class="material-icons">arrow_upward</i>
+          </button>
+        </div>
+        <div class="di-but">
+          <button class="dir-button" mat-raised-button color="secondary" (click)="additionalButton('guide')">
+            <i class="material-icons">web</i>
+          </button>
+        </div>
+      </div>
+
+      <div class="dir-2">
+        <div class="di-but">
+          <button class="dir-button" mat-raised-button color="secondary" (click)="arrowButton('left')">
+            <i class="material-icons" style="width: 24px">arrow_backward</i>
+          </button>
+        </div>
+        <div class="di-but">
+          <button class="dir-button" mat-raised-button (click)="arrowButton('ok')">
+            <i class="material-icons">trip_origin</i>
+          </button>
+        </div>
+        <div class="di-but">
+          <button class="dir-button" mat-raised-button color="secondary" (click)="arrowButton('right')">
+            <i class="material-icons">arrow_forward</i>
+          </button>
+        </div>
+      </div>
+
+      <div class="dir-3">
+        <div class="di-but">
+          <button class="dir-button" mat-raised-button color="secondary" (click)="arrowButton('return')">
+            <i class="material-icons">subdirectory_arrow_left</i>
+          </button>
+        </div>
+        <div class="di-but">
+          <button class="dir-button" mat-raised-button color="secondary" (click)="arrowButton('down')">
+            <i class="material-icons">arrow_downward</i>
+          </button>
+        </div>
+        <div class="di-but">
+          <div class="dir-button"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" *ngFor="let rnum of [0,1,2]">
+      <div class="button" *ngFor="let cnum of [1,2,3]">
+        <button mat-raised-button color="primary" (click)="numButton(rnum*3+cnum)">{{rnum*3+cnum}}</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="button">
+        <button mat-raised-button color="accent" (click)="muteButton()">
+          <i class="material-icons">volume_off</i>
+        </button>
+      </div>
+      <div class="button">
+        <button mat-raised-button color="primary" (click)="numButton(0)">0</button>
+      </div>
+      <div class="button">
+        <button mat-raised-button color="accent" (click)="lastChannelButton()">
+          <i class="material-icons">replay</i>
+        </button>
+      </div>
+    </div>
+
+    <div class="ch-vol-button-row">
+      <div class="ch-vol-button">
+        <button mat-raised-button color="secondary" (click)="controlButton('voldown')">Vol -</button>
+        <button mat-raised-button color="secondary" (click)="controlButton('volup')">Vol +</button>
+      </div>
+      <div class="ch-vol-button">
+        <button mat-raised-button color="secondary" (click)="controlButton('channeldown')">Ch -</button>
+        <button mat-raised-button color="secondary" (click)="controlButton('channelup')">Ch +</button>
+      </div>
+    </div>
+  </div>
+</div>
