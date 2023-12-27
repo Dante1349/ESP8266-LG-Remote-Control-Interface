@@ -143,8 +143,9 @@ void setup() {
     // Start the mDNS responder for remote.local
     if (!MDNS.begin("remote")) {
         Serial.println("Error setting up MDNS responder!");
+    } else {
+        Serial.println("mDNS responder started with remote.local");
     }
-    Serial.println("mDNS responder started");
 
     // Print the IP address
     Serial.println(WiFi.localIP());
