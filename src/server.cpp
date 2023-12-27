@@ -137,14 +137,8 @@ void setup() {
         delay(500);
         Serial.print(".");
     }
-    WiFi.hostname("remote.local");
+    WiFi.hostname("remote");
     Serial.println("WiFi connected");
-
-    if (!MDNS.begin("remote")) {
-        Serial.println("Error setting up MDNS responder!");
-    } else {
-        Serial.println("mDNS responder started");
-    }
 
     // Start the mDNS responder for remote.local
     if (!MDNS.begin("remote")) {
